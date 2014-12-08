@@ -170,7 +170,9 @@
 <body>
 
 <form id="searchbox" method="post" action="/component/jshopping/search/result?Itemid=435" onsubmit="return isEmptyValue(jQuery('#jshop_search').val())">
-    <input id="search" type="text" placeholder="Поиск товара">
+		<input type="hidden" name="setsearchdata" value="1">
+		<input type="hidden" name="category_id" value="0">    
+    <input id="search" type="text" placeholder="Поиск товара" name="search" id="jshop_search" size="20" onfocus="if (this.value=='Найти нужный товар...') this.value='';" onblur="if (this.value=='') this.value='Найти нужный товар...';" value="Найти нужный товар...">
     <input id="submit" type="submit" value="Поиск">
                 <script type="text/javascript">
 					function isEmptyValue(value){
@@ -181,19 +183,5 @@
 </form>
 
 
-<div id="search-slot">
-               	<script type="text/javascript">
-					function isEmptyValue(value){
-						var pattern = /\S/;
-						return ret = (pattern.test(value)) ? (true) : (false);
-					}
-				</script>
-				<form name="searchForm" method="post" action="/component/jshopping/search/result?Itemid=435" onsubmit="return isEmptyValue(jQuery('#jshop_search').val())">
-				<input type="hidden" name="setsearchdata" value="1">
-				<input type="hidden" name="category_id" value="0">
-				<input type="text" class="inputbox" name="search" id="jshop_search" size="20" onfocus="if (this.value=='Найти нужный товар...') this.value='';" onblur="if (this.value=='') this.value='Найти нужный товар...';" value="Найти нужный товар...">
-				<input class="button" type="submit" value="Поиск">
-				</form>          		          
-			</div>
 
 </body></html>
