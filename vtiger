@@ -1,0 +1,30 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<form name="Lead" action="http://89.184.83.41:2080/vtigercrm/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data"><input type="hidden" name="__vtrftk" value="sid:1f9a741969a781df4e624575bea279f6a96b7b05,1433537586">
+	<input type="hidden" name="publicid" value="dbe2c7cea1983f42f110d9d79232ad3c">
+	<input type="hidden" name="name" value="Lead">
+        <input type="hidden" name="VTIGER_RECAPTCHA_PUBLIC_KEY" value="RECAPTCHA PUBLIC KEY FOR THIS DOMAIN">
+    	<table>
+                            								                                																<tbody><tr>
+
+<td><label>Title*</label></td><td>
+                                                                                                                            										                                        	<input type="text" name="ticket_title" value="" required="">                                        </td></tr>
+                                								                                																<tr>
+
+<td><label>Status*</label></td><td>
+                                                                                                                                                                                                                                                                                                                                                            										                                        <select name="ticketstatus" required="">
+	<option value="">Select Value</option>
+                                                <option value="Open">Open</option>
+                                                <option value="In Progress">In Progress</option>
+                                                <option value="Wait For Response">Wait For Response</option>
+                                                <option value="Closed">Closed</option>
+                                                </select>
+
+                                        </td></tr>
+                                	</tbody></table>
+            <script type="text/javascript">var RecaptchaOptions = { theme : "clean" };</script><script type="text/javascript"src="http://www.google.com/recaptcha/api/challenge?k=RECAPTCHA PUBLIC KEY FOR THIS DOMAIN"></script><noscript><iframe src="http://www.google.com/recaptcha/api/noscript?k=RECAPTCHA PUBLIC KEY FOR THIS DOMAIN">height="300" width="500" frameborder="0"></iframe><br><textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea><input type="hidden" name="recaptcha_response_field" value="manual_challenge"></noscript>
+        <input type="hidden" id="captchaUrl" value="http://89.184.83.41:2080/vtigercrm/modules/Settings/Webforms/actions/CheckCaptcha.php">
+        <input type="hidden" id="recaptcha_validation_value">
+    <input type="submit" value="Submit">
+</form>
+            <script  type="text/javascript">window.onload = function() { var N=navigator.appName, ua=navigator.userAgent, tem;var M=ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];M=M? [M[1], M[2]]: [N, navigator.appVersion, "-?"];var browserName = M[0];var form = document.forms[0], inputs = form.elements; form.onsubmit = function() { var required = [], att, val; for (var i = 0; i < inputs.length; i++) { att = inputs[i].getAttribute("required"); val = inputs[i].value; type = inputs[i].type; if(type == "email") {if(val != "") {var elemLabel = inputs[i].getAttribute("label");var emailFilter = /^[_/a-zA-Z0-9]+([!"#$%&()*+,./:;<=>?\^_`{|}~-]?[a-zA-Z0-9/_/-])*@[a-zA-Z0-9]+([\_\-\.]?[a-zA-Z0-9]+)*\.([\-\_]?[a-zA-Z0-9])+(\.?[a-zA-Z0-9]+)?$/;var illegalChars= /[\(\)\<\>\,\;\:\"\[\]]/ ;if (!emailFilter.test(val)) {alert("For "+ elemLabel +" field please enter valid email address"); return false;} else if (val.match(illegalChars)) {alert(elemLabel +" field contains illegal characters");return false;}}}if (att != null) { if (val.replace(/^\s+|\s+$/g, "") == "") { required.push(inputs[i].getAttribute("label")); } } } if (required.length > 0) { alert("The following fields are required: " + required.join()); return false; } var numberTypeInputs = document.querySelectorAll("input[type=number]");for (var i = 0; i < numberTypeInputs.length; i++) { val = numberTypeInputs[i].value;var elemLabel = numberTypeInputs[i].getAttribute("label");if(val != "") {var intRegex = /^[+-]?\d+$/;if (!intRegex.test(val)) {alert("For "+ elemLabel +" field please enter valid number"); return false;}}}var recaptchaValidationValue = document.getElementById("recaptcha_validation_value").value;if (recaptchaValidationValue!= true){var recaptchaResponseElement = document.getElementsByName("recaptcha_response_field")[0].value;var recaptchaChallengeElement = document.getElementsByName("recaptcha_challenge_field")[0].value;var captchaUrl = document.getElementById("captchaUrl").value;var url = captchaUrl+"?recaptcha_response_field="+recaptchaResponseElement;url = url + "&recaptcha_challenge_field="+recaptchaChallengeElement+"&callback=JSONPCallback";jsonp.fetch(url);return false;}}; };var jsonp = {callbackCounter: 0,fetch: function(url) {url = url +"&callId="+this.callbackCounter;var scriptTag = document.createElement("SCRIPT");scriptTag.src = url;scriptTag.async = true;scriptTag.id = "JSONPCallback_"+this.callbackCounter;scriptTag.type = "text/javascript";document.getElementsByTagName("HEAD")[0].appendChild(scriptTag);this.callbackCounter++;}};function JSONPCallback(data) {if(data.result.success == true) {document.getElementById("recaptcha_validation_value").value = true;var form = document.forms[0];form.submit();} else {document.getElementById("recaptcha_reload").click();alert("you entered wrong captcha");}var element = document.getElementById("JSONPCallback_"+data.result.callId);element.parentNode.removeChild(element);}</script>
